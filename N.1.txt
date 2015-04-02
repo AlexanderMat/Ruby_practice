@@ -1,0 +1,14 @@
+def hashing(a, b)
+  array = [a, b].flatten.delete_if { |x| x == nil }
+
+  array = array.join('-0-').split('-') << '0'
+
+  hash = Hash[*array]
+
+  hash.each { |x, y|
+    ax = [a, b].flatten.count(x.to_i)
+    hash[x] = ax }
+
+  return hash
+
+end
