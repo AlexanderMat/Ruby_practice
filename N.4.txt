@@ -1,0 +1,56 @@
+def lcd(n)
+  f = []
+  s = []
+  t = []
+  it = 0
+  
+  n.to_s.length.times do
+    f << " " * 3
+    s << " " * 3
+    t << " " * 3
+  end
+
+  n.to_s.split('').each do |i|
+
+    case i
+    when "1"
+      s[it] = "  |"
+      t[it] = "  |"
+    when "2"
+      s[it] = " _|"
+      t[it] = "|_ "
+    when "3"
+      s[it] = " _|"
+      t[it] = " _|"
+    when "4"
+      s[it] = "|_|"
+      t[it] = "  |"
+    when "5"
+      s[it] = "|_ "
+      t[it] = " _|"
+    when "6"
+      s[it] = "|_ "
+      t[it] = "|_|"
+    when "7"
+      s[it] = "  |"
+      t[it] = "  |"
+    when "8"
+      s[it] = "|_|"
+      t[it] = "|_|"
+    when "9"
+      s[it] = "|_|"
+      t[it] = " _|"
+    when "0"
+      s[it] = "| |"
+      t[it] = "|_|"
+    end
+
+    case i
+    when "2", "3", "5", "6", "7", "8", "9", "0"
+      f[it] = " _ "
+    end
+    it += 1
+  end
+
+  print f.join, "\n", s.join, "\n", t.join
+end
