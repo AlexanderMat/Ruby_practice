@@ -1,0 +1,14 @@
+def uniqrand(m)
+  c = 0
+  a = []
+  o = []
+  while !(c == m.length) do
+    x = m[rand(m.length)]
+    if !(a.include?(x))
+      o << x
+      a << x
+      c += 1
+    end
+  end
+  return a
+end
