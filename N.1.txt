@@ -5,9 +5,11 @@ def hashing(a, b)
 
   hash = Hash[*array]
 
-  hash.each { |x, y|
+  hash.each do
+    |x, y|
     ax = [a, b].flatten.count(x.to_i)
-    hash[x] = ax }
+    hash[x] = ax
+  end
 
   return hash
 
