@@ -1,0 +1,19 @@
+def coord(n)
+  x = 60.597223
+  y = 56.837992
+  r = 10
+  p = 0
+  res = []
+  n = n.flatten
+
+  (n.size / 2).times do
+    s = Math.sqrt(((n[p] * n[p] - x * x) + (n[p + 1] * n[p + 1] - y * y)))
+    if s <= r
+      res << [n[p], n[p + 1]]
+    end
+    p += 2
+  end
+  
+  return res
+  
+end
